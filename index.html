@@ -13,12 +13,27 @@
   <div class="main-container">
     <!-- Countdown Section -->
     <div class="countdown-section">
-      <h1 class="title">WWM Release</h1>
+      <h1 class="title">
+        <span class="glow-text">WWM RELEASE</span>
+      </h1>
+      <div id="particles"></div>
       <div id="countdown" class="countdown">
-        <div><span id="days">00</span><p>Days</p></div>
-        <div><span id="hours">00</span><p>Hours</p></div>
-        <div><span id="minutes">00</span><p>Minutes</p></div>
-        <div><span id="seconds">00</span><p>Seconds</p></div>
+        <div class="time-box">
+          <span id="days">00</span>
+          <p>Days</p>
+        </div>
+        <div class="time-box">
+          <span id="hours">00</span>
+          <p>Hours</p>
+        </div>
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <p>Minutes</p>
+        </div>
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <p>Seconds</p>
+        </div>
       </div>
     </div>
 
@@ -30,10 +45,9 @@
     </div>
   </div>
 
-  <!-- Countdown + Music Unmute -->
   <script src="script.js"></script>
   <script>
-    // Unmute background music after any click
+    // Unmute background music after user interaction
     window.addEventListener('click', () => {
       const music = document.getElementById('bg-music');
       if (music.muted) {
