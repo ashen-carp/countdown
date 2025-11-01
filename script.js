@@ -6,7 +6,7 @@ function updateCountdown() {
   const distance = targetDate - now;
 
   if (distance <= 0) {
-    document.getElementById('countdown').innerHTML = "<h2>It’s time!</h2>";
+    document.getElementById('countdown').innerHTML = "<h2 class='done-text'>It's Time.</h2>";
     return;
   }
 
@@ -21,5 +21,19 @@ function updateCountdown() {
   document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 }
 
+// Add subtle background shimmer particles
+function createParticles() {
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 30; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('particle');
+    dot.style.left = Math.random() * 100 + '%';
+    dot.style.top = Math.random() * 100 + '%';
+    dot.style.animationDelay = (Math.random() * 5) + 's';
+    container.appendChild(dot);
+  }
+}
+
 setInterval(updateCountdown, 1000);
 updateCountdown();
+createParticles();
