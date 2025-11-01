@@ -1,12 +1,13 @@
-// Countdown target date
+// Countdown logic
 const targetDate = new Date('November 14, 2025 16:00:00 GMT-0600').getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
   const distance = targetDate - now;
+  const countdownEl = document.getElementById('countdown');
 
   if (distance <= 0) {
-    document.getElementById('countdown').innerHTML = "<h2 class='done-text'>It Begins.</h2>";
+    countdownEl.innerHTML = "<h2 class='done-text'>It Begins.</h2>";
     return;
   }
 
@@ -23,3 +24,20 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
+/* --- Ember Animation --- */
+const emberLayer = document.querySelector('.ember-layer');
+const EMBER_COUNT = 35;
+
+for (let i = 0; i < EMBER_COUNT; i++) {
+  const ember = document.createElement('div');
+  ember.classList.add('ember');
+  ember.style.left = Math.random() * 100 + 'vw';
+  ember.style.top = (100 + Math.random() * 30) + 'vh';
+  ember.style.width = (2 + Math.random() * 4) + 'px';
+  ember.style.height = ember.style.width;
+  ember.style.animationDuration = (10 + Math.random() * 10) + 's';
+  ember.style.animationDelay = (Math.random() * 10) + 's';
+  ember.style.opacity = (0.2 + Math.random() * 0.5).toFixed(2);
+  emberLayer.appendChild(ember);
+}
