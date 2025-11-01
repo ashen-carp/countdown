@@ -3,53 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WWM Release</title>
+  <title>WWM Release Countdown</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Background Layers -->
-  <div class="background-gradient"></div>
-  <div class="mist-layer"></div>
-  <div class="ember-layer"></div>
+  <canvas id="particle-canvas"></canvas>
 
-  <main class="main-container">
-    <section class="countdown-section">
+  <div class="container">
+    <div class="frosted-box">
       <h1 class="title">WWM RELEASE</h1>
 
-      <div id="countdown" class="countdown">
-        <div class="unit">
-          <span id="days">00</span>
-          <p>Days</p>
+      <div class="countdown">
+        <div class="time-segment">
+          <span class="time" id="days">00</span>
+          <span class="label">DAYS</span>
         </div>
-        <div class="colon">:</div>
-        <div class="unit">
-          <span id="hours">00</span>
-          <p>Hours</p>
+        <span class="colon">:</span>
+        <div class="time-segment">
+          <span class="time" id="hours">00</span>
+          <span class="label">HOURS</span>
         </div>
-        <div class="colon">:</div>
-        <div class="unit">
-          <span id="minutes">00</span>
-          <p>Minutes</p>
+        <span class="colon">:</span>
+        <div class="time-segment">
+          <span class="time" id="minutes">00</span>
+          <span class="label">MINUTES</span>
         </div>
-        <div class="colon">:</div>
-        <div class="unit">
-          <span id="seconds">00</span>
-          <p>Seconds</p>
+        <span class="colon">:</span>
+        <div class="time-segment">
+          <span class="time" id="seconds">00</span>
+          <span class="label">SECONDS</span>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="logo-section">
-      <a href="https://discord.gg/dzPWFpYEGG" target="_blank" class="logo-link">
-        <div class="logo-container">
-          <img src="powerful.png" alt="Ashen Carp Logo" class="logo" />
-          <div class="logo-light"></div>
-        </div>
-      </a>
-    </section>
-  </main>
-
-  <audio id="bgm" src="lotus.mp3" autoplay loop></audio>
+    <img src="powerful.png" alt="Powerful logo" class="logo" />
+  </div>
 
   <script src="script.js"></script>
 </body>
