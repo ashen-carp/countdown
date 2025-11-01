@@ -7,15 +7,12 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Background Music -->
-  <audio id="bg-music" src="lotus.mp3" loop autoplay muted></audio>
-
-  <!-- Background layers -->
-  <div class="background-overlay"></div>
-  <div class="shimmer-layer"></div>
+  <!-- Background Layers -->
+  <div class="background-gradient"></div>
+  <div class="mist-layer"></div>
+  <div class="ember-layer"></div>
 
   <main class="main-container">
-    <!-- Countdown Section -->
     <section class="countdown-section">
       <h1 class="title">WWM RELEASE</h1>
 
@@ -24,23 +21,17 @@
           <span id="days">00</span>
           <p>Days</p>
         </div>
-
         <div class="colon">:</div>
-
         <div class="unit">
           <span id="hours">00</span>
           <p>Hours</p>
         </div>
-
         <div class="colon">:</div>
-
         <div class="unit">
           <span id="minutes">00</span>
           <p>Minutes</p>
         </div>
-
         <div class="colon">:</div>
-
         <div class="unit">
           <span id="seconds">00</span>
           <p>Seconds</p>
@@ -48,24 +39,16 @@
       </div>
     </section>
 
-    <!-- Logo Section -->
     <section class="logo-section">
       <a href="https://discord.gg/dzPWFpYEGG" target="_blank" class="logo-link">
-        <img src="powerful.png" alt="Ashen Carp Logo" class="logo-glow" />
+        <div class="logo-container">
+          <img src="powerful.png" alt="Ashen Carp Logo" class="logo" />
+          <div class="logo-light"></div>
+        </div>
       </a>
     </section>
   </main>
 
   <script src="script.js"></script>
-  <script>
-    // Unmute background music after click
-    window.addEventListener('click', () => {
-      const music = document.getElementById('bg-music');
-      if (music.muted) {
-        music.muted = false;
-        music.play().catch(() => {});
-      }
-    });
-  </script>
 </body>
 </html>
