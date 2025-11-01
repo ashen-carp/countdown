@@ -41,3 +41,11 @@ for (let i = 0; i < EMBER_COUNT; i++) {
   ember.style.opacity = (0.2 + Math.random() * 0.5).toFixed(2);
   emberLayer.appendChild(ember);
 }
+
+/* --- Audio autoplay fix --- */
+window.addEventListener('click', () => {
+  const bgm = document.getElementById('bgm');
+  if (bgm.paused) {
+    bgm.play().catch(() => {});
+  }
+}, { once: true });
