@@ -8,7 +8,7 @@
 </head>
 <body>
   <!-- Background Music -->
-  <audio id="bg-music" src="lotus.mp3" autoplay loop></audio>
+  <audio id="bg-music" src="lotus.mp3" loop autoplay muted></audio>
 
   <div class="main-container">
     <!-- Countdown Section -->
@@ -22,15 +22,25 @@
       </div>
     </div>
 
-    <!-- Logo + Recruitment -->
+    <!-- Logo Section -->
     <div class="logo-section">
       <a href="https://discord.gg/dzPWFpYEGG" target="_blank" class="logo-link">
         <img src="powerful.png" alt="Ashen Carp Logo" class="logo-glow" />
       </a>
-      <p class="recruitment-text">Ashen Carp Sect is recruiting — click the emblem to join.</p>
     </div>
   </div>
 
+  <!-- Countdown + Music Unmute -->
   <script src="script.js"></script>
+  <script>
+    // Unmute background music after any click
+    window.addEventListener('click', () => {
+      const music = document.getElementById('bg-music');
+      if (music.muted) {
+        music.muted = false;
+        music.play().catch(() => {});
+      }
+    });
+  </script>
 </body>
 </html>
